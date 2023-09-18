@@ -43,6 +43,6 @@ class CarTest {
         assertEquals(15, car.getMiles());
         car.stop();
         car.drive(10);
-        assertEquals(15, car.getMiles());
+        assertEquals(15, car.getMiles()); //should it be 25????
     }
 }

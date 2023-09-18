@@ -4,38 +4,57 @@ import java.time.Year;
 
 public class Car {
 
-    public Car(String make, String model, Year year) {
+    private String make;
+    private String model;
+    private Year year;
+    //variables
+    boolean running = false;
+    int totalMiles = 0;
 
+    public Car(String make, String model, Year year) {
+        this.make=make;
+        this.model=model;
+        this.year=year;
     }
 
     public String getMake() {
-        return null;
+        return make;
     }
 
     public String getModel() {
-        return null;
+        return model;
     }
 
     public Year getYear() {
-        return null;
+        return year;
     }
 
     public boolean isRunning() {
-        return false;
+        return running;
     }
 
     public void start() {
-
+        if (isRunning()==true){
+            return;
+        }else{
+            running=true;
+        }
     }
 
     public void stop() {
-
+        if (isRunning()==false){
+            return;
+        }else{
+            running=false;
+        }
     }
 
     public void drive(int distance) {
+        totalMiles+=distance;
     }
 
     public int getMiles() {
-        return 0;
+
+        return totalMiles;
     }
 }
