@@ -50,11 +50,11 @@ public class Car {
     }
 
     public void drive(int distance) {
-        totalMiles+=distance;
+        if (isRunning()==true)
+            totalMiles+=distance;
     }
 
     public int getMiles() {
-
         return totalMiles;
     }
 }
