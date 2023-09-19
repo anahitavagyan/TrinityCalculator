@@ -27,7 +27,7 @@ public class RPNCalculator {
         }
 
         if(myStack.size() != 1){
-            throw new IllegalArgumentException();
+            myStack.pop();
         }
 
         return myStack.pop();
