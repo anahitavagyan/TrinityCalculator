@@ -1,11 +1,20 @@
 package edu.trinity;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class RPNCalculatorTest {
+
+    @Test
+    public void testIsOperator(){
+        assertTrue(RPNCalculator.isOperator("+"));
+    }
+
+    @Test
+    public void testEvaluateOperation(){
+        assertEquals(15.0, RPNCalculator.evaluateOperation("*", 5, 3), 0.001);
+    }
 
     @Test
     public void testAddition() {
