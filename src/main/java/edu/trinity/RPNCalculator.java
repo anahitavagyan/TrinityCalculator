@@ -31,7 +31,6 @@ public class RPNCalculator {
         }
 
         return myStack.pop();
-
     }
 
     //decides if the given String is an operator or not
@@ -62,7 +61,5 @@ public class RPNCalculator {
                 throw new IllegalArgumentException();
         }
     }
-
-
 
 }
