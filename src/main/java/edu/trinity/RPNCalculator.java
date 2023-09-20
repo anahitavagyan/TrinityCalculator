@@ -26,7 +26,7 @@ public class RPNCalculator {
             }
         }
 
-        if(myStack.size() != 1){
+        if(myStack.size() > 1){
             myStack.pop();
         }
 
