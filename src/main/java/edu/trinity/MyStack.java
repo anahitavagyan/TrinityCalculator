@@ -6,7 +6,7 @@ public class MyStack<T> {
 
     private int size;
     private Object[] myStack;
-    private int maxSize=100;
+    private int maxSize=100; //assuming no more than 100 elements will be added to the array
 
     public MyStack(){
         myStack = (T[]) new Object[maxSize];
