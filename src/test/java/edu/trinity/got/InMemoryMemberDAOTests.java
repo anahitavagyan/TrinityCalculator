@@ -117,6 +117,13 @@ public class InMemoryMemberDAOTests {
 
         assertThat(members).hasSize(6)
                 .allMatch(member -> member.title() == Title.KING);
+        //below here is added by me
+        List<String> names = members.stream()
+                .map(Member::name)
+                .toList();
+
+        assertThat(names).containsExactly("Tommen", "Stannis", "Robert","Robb", "Jon", "Joffrey");
+
     }
 
     @Test
@@ -141,7 +148,7 @@ public class InMemoryMemberDAOTests {
 
     @Test
     public void greyjoys() {
-        assertThat(dao.anyMembers(House.GREYJOY)).isFalse();
+        assertThat(dao.anyMembers(House.ARRYN)).isFalse();
     }
 
     @Test

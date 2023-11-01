@@ -45,7 +45,7 @@ public class RPNCalculator {
         return stack.pop();
     }
 
-    private static boolean isOperator(String token) {
+    public static boolean isOperator(String token) {
         return token.equals("+") || token.equals("-") ||
                token.equals("*") || token.equals("/");
     }
