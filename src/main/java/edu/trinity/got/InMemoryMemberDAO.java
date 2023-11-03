@@ -192,7 +192,11 @@ public class InMemoryMemberDAO implements MemberDAO {
      */
     @Override
     public Map<Boolean, List<Member>> royaltyPartition() {
-        return Collections.emptyMap();
+        Map<Boolean, List<Member>> map1 = allMembers.stream()
+                                                    .collect(Collectors.partitioningBy(
+                                                          member -> member.title() == Title.KING
+                                                                  || member.title() == Title.QUEEN));
+        return map1;
     }
 
     /**
@@ -200,7 +204,9 @@ public class InMemoryMemberDAO implements MemberDAO {
      */
     @Override
     public Map<House, List<Member>> membersByHouse() {
-        return Collections.emptyMap();
+        Map<House, List<Member>> map1 = allMembers.stream()
+                                                  .collect(Collectors.groupingBy(Member::house));
+        return map1;
     }
 
     /**
@@ -209,7 +215,10 @@ public class InMemoryMemberDAO implements MemberDAO {
      */
     @Override
     public Map<House, Long> numberOfMembersByHouse() {
-        return Collections.emptyMap();
+        Map<House, Long> map1 = allMembers.stream()
+                                           .collect(Collectors.groupingBy(Member::house,
+                                                   Collectors.counting()));
+        return map1;
     }
 
     /**
