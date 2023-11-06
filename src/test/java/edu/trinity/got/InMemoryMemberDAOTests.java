@@ -117,11 +117,10 @@ public class InMemoryMemberDAOTests {
 
         assertThat(members).hasSize(6)
                 .allMatch(member -> member.title() == Title.KING);
-        //below here is added by me
+        //added by me
         List<String> names = members.stream()
                 .map(Member::name)
                 .toList();
-
         assertThat(names).containsExactly("Tommen", "Stannis", "Robert","Robb", "Jon", "Joffrey");
 
     }
